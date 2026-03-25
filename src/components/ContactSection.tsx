@@ -1,5 +1,5 @@
 import { useState, type FormEvent } from "react";
-import { Mail, MessageCircle, Linkedin, Send } from "lucide-react";
+import { Mail, MessageCircle, Linkedin } from "lucide-react";
 
 const ContactSection = () => {
   const [submitted, setSubmitted] = useState(false);
@@ -10,61 +10,62 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="py-20 md:py-28 bg-card">
+    <section id="contact" className="py-24 md:py-32 bg-card">
       <div className="container">
-        <div className="text-center mb-14">
-          <p className="text-accent font-medium text-sm tracking-widest uppercase mb-3">Let's Connect</p>
-          <h2 className="text-3xl md:text-4xl text-foreground">Contact Me</h2>
+        <div className="max-w-md mb-16">
+          <p className="text-accent text-xs font-semibold tracking-label uppercase mb-4">Contact</p>
+          <h2 className="text-3xl md:text-[2.5rem] leading-tight text-foreground">
+            Let's Work Together
+          </h2>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
+        <div className="grid lg:grid-cols-[1.2fr_1fr] gap-16 max-w-4xl">
           {/* Form */}
           <div>
             {submitted ? (
-              <div className="bg-accent/10 border border-accent/20 rounded-lg p-8 text-center">
-                <p className="text-foreground font-medium text-lg mb-2">Thank you!</p>
-                <p className="text-muted-foreground text-sm">Your message has been received. I'll get back to you shortly.</p>
+              <div className="border border-accent/20 rounded-lg p-10 text-center">
+                <p className="text-foreground font-display text-xl mb-2">Thank you</p>
+                <p className="text-muted-foreground text-sm">Your message has been received. I'll respond within 24 hours.</p>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-5">
+              <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
-                  <label className="block text-foreground text-sm font-medium mb-1.5">Name</label>
-                  <input required type="text" placeholder="Your full name" className="w-full bg-background border border-border rounded-md px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-accent/50" />
+                  <label className="block text-foreground text-xs font-semibold tracking-label uppercase mb-2">Name</label>
+                  <input required type="text" placeholder="Your full name" className="w-full bg-background border border-border rounded px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/60 focus:outline-none focus:border-accent transition-colors" />
                 </div>
                 <div>
-                  <label className="block text-foreground text-sm font-medium mb-1.5">Email</label>
-                  <input required type="email" placeholder="you@company.com" className="w-full bg-background border border-border rounded-md px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-accent/50" />
+                  <label className="block text-foreground text-xs font-semibold tracking-label uppercase mb-2">Email</label>
+                  <input required type="email" placeholder="you@company.com" className="w-full bg-background border border-border rounded px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/60 focus:outline-none focus:border-accent transition-colors" />
                 </div>
                 <div>
-                  <label className="block text-foreground text-sm font-medium mb-1.5">Message</label>
-                  <textarea required rows={5} placeholder="Tell me about your project..." className="w-full bg-background border border-border rounded-md px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-accent/50 resize-none" />
+                  <label className="block text-foreground text-xs font-semibold tracking-label uppercase mb-2">Message</label>
+                  <textarea required rows={5} placeholder="Tell me about your project..." className="w-full bg-background border border-border rounded px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/60 focus:outline-none focus:border-accent transition-colors resize-none" />
                 </div>
-                <button type="submit" className="inline-flex items-center gap-2 bg-accent text-accent-foreground px-6 py-3 rounded-md font-medium hover:opacity-90 transition-opacity">
-                  <Send size={16} />
+                <button type="submit" className="bg-accent text-accent-foreground px-7 py-3 rounded text-sm font-medium tracking-wide hover:bg-accent/90 transition-colors">
                   Send Message
                 </button>
               </form>
             )}
           </div>
 
-          {/* Contact info */}
-          <div className="flex flex-col justify-center gap-6">
-            <p className="text-muted-foreground leading-relaxed">
-              Whether you need a one-time title search or ongoing support for your pipeline, I'm here to help. Reach out through the form or connect with me directly.
+          {/* Info */}
+          <div className="flex flex-col justify-end gap-8">
+            <p className="text-muted-foreground text-sm leading-relaxed">
+              Whether you need a one-time title search or ongoing support for your pipeline, reach out through the form or connect directly.
             </p>
 
-            <div className="space-y-4">
-              <a href="mailto:hello@titlesearchpro.com" className="flex items-center gap-3 text-foreground hover:text-accent transition-colors">
-                <Mail size={18} className="text-accent" />
-                <span className="text-sm">hello@titlesearchpro.com</span>
+            <div className="space-y-4 pt-2">
+              <a href="mailto:hello@titlesearchpro.com" className="flex items-center gap-3 text-foreground hover:text-accent transition-colors text-sm">
+                <Mail size={16} className="text-accent" />
+                hello@titlesearchpro.com
               </a>
-              <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-foreground hover:text-accent transition-colors">
-                <MessageCircle size={18} className="text-accent" />
-                <span className="text-sm">WhatsApp</span>
+              <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-foreground hover:text-accent transition-colors text-sm">
+                <MessageCircle size={16} className="text-accent" />
+                WhatsApp
               </a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-foreground hover:text-accent transition-colors">
-                <Linkedin size={18} className="text-accent" />
-                <span className="text-sm">LinkedIn Profile</span>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-foreground hover:text-accent transition-colors text-sm">
+                <Linkedin size={16} className="text-accent" />
+                LinkedIn
               </a>
             </div>
           </div>
