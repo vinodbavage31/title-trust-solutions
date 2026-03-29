@@ -1,4 +1,4 @@
-import { Star } from "lucide-react";
+import { Star, Quote } from "lucide-react";
 
 const testimonials = [
   {
@@ -22,35 +22,36 @@ const testimonials = [
 ];
 
 const TestimonialsSection = () => (
-  <section className="py-20 md:py-28 bg-background">
+  <section className="py-24 md:py-32 bg-card">
     <div className="container">
-      <div className="max-w-lg mb-14">
-        <p className="text-accent text-xs font-semibold tracking-label uppercase mb-4">Client Feedback</p>
-        <h2 className="text-[1.75rem] md:text-[2.25rem] leading-[1.2] text-foreground">
+      <div className="text-center max-w-xl mx-auto mb-16">
+        <p className="text-accent text-xs font-semibold tracking-label uppercase mb-3">Client Feedback</p>
+        <h2 className="text-3xl md:text-[2.5rem] leading-tight font-display font-bold text-foreground">
           What Clients Say
         </h2>
       </div>
 
-      <div className="grid md:grid-cols-3 gap-6">
+      <div className="grid md:grid-cols-3 gap-5">
         {testimonials.map((t, i) => (
-          <div key={i} className="border border-border rounded-lg p-7 md:p-8 flex flex-col">
-            <div className="flex gap-0.5 mb-5">
+          <div key={i} className="bg-background rounded-xl p-7 md:p-8 shadow-card flex flex-col border border-border/60">
+            <Quote size={20} className="text-accent/30 mb-4" />
+            <div className="flex gap-0.5 mb-4">
               {[...Array(5)].map((_, j) => (
                 <Star key={j} size={14} className="text-accent fill-accent" />
               ))}
             </div>
-            <blockquote className="text-foreground text-[0.9375rem] leading-[1.7] mb-6 flex-1">
+            <blockquote className="text-foreground text-[0.9375rem] leading-relaxed mb-6 flex-1">
               "{t.quote}"
             </blockquote>
-            <div className="border-t border-border pt-5">
-              <p className="text-foreground text-sm font-medium">{t.name}</p>
+            <div className="border-t border-border pt-4">
+              <p className="text-foreground text-sm font-semibold">{t.name}</p>
               <p className="text-muted-foreground text-xs mt-0.5">{t.role}, {t.company}</p>
             </div>
           </div>
         ))}
       </div>
 
-      <p className="text-muted-foreground/60 text-xs mt-8 text-center italic">
+      <p className="text-muted-foreground/50 text-xs mt-8 text-center italic">
         * Placeholder testimonials — will be replaced with real client feedback
       </p>
     </div>
