@@ -1,4 +1,5 @@
 import { FileText, ArrowRight, CheckCircle2 } from "lucide-react";
+import titleDocsImg from "@/assets/title-documents.jpg";
 
 const items = [
   "Property Address & Legal Description",
@@ -13,12 +14,15 @@ const SampleWorkSection = () => (
       <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
         {/* Preview mock */}
         <div className="bg-card rounded-xl shadow-card overflow-hidden border border-border/60">
-          <div className="bg-navy py-16 flex flex-col items-center">
-            <div className="w-14 h-14 rounded-xl bg-primary-foreground/10 flex items-center justify-center mb-4">
-              <FileText size={28} className="text-cyan" strokeWidth={1.5} />
+          <div className="bg-navy py-10 flex flex-col items-center relative overflow-hidden">
+            <img src={titleDocsImg} alt="Title search documents" loading="lazy" width={800} height={600} className="absolute inset-0 w-full h-full object-cover opacity-15" />
+            <div className="relative z-10 flex flex-col items-center">
+              <div className="w-14 h-14 rounded-xl bg-primary-foreground/10 flex items-center justify-center mb-4">
+                <FileText size={28} className="text-cyan" strokeWidth={1.5} />
+              </div>
+              <p className="text-primary-foreground font-display text-lg font-bold">Sample Title Report</p>
+              <p className="text-primary-foreground/40 text-sm mt-1">Full Chain of Title — Residential</p>
             </div>
-            <p className="text-primary-foreground font-display text-lg font-bold">Sample Title Report</p>
-            <p className="text-primary-foreground/40 text-sm mt-1">Full Chain of Title — Residential</p>
           </div>
           <div className="p-6">
             <div className="space-y-3">

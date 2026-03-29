@@ -1,4 +1,5 @@
 import { ArrowRight, Shield } from "lucide-react";
+import heroBg from "@/assets/hero-bg.jpg";
 
 const stats = [
   { value: "500+", label: "Searches Completed" },
@@ -8,6 +9,8 @@ const stats = [
 
 const HeroSection = () => (
   <section className="relative min-h-[92vh] flex items-center bg-navy overflow-hidden">
+    {/* Background image */}
+    <img src={heroBg} alt="" aria-hidden="true" className="absolute inset-0 w-full h-full object-cover opacity-30 mix-blend-lighten" width={1920} height={1080} />
     {/* Gradient orbs */}
     <div className="absolute top-[-20%] right-[-10%] w-[600px] h-[600px] rounded-full bg-accent/10 blur-[120px]" />
     <div className="absolute bottom-[-10%] left-[-5%] w-[400px] h-[400px] rounded-full bg-cyan/8 blur-[100px]" />
