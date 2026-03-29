@@ -24,28 +24,25 @@ const services = [
 ];
 
 const ServicesSection = () => (
-  <section id="services" className="py-20 md:py-28 bg-card">
+  <section id="services" className="py-24 md:py-32 bg-background">
     <div className="container">
-      <div className="grid lg:grid-cols-[0.8fr_1fr] gap-12 lg:gap-20 items-start mb-14">
-        <div>
-          <p className="text-accent text-xs font-semibold tracking-label uppercase mb-4">Services</p>
-          <h2 className="text-[1.75rem] md:text-[2.25rem] leading-[1.2] text-foreground">
-            Everything You Need to Close with Confidence
-          </h2>
-        </div>
-        <p className="text-muted-foreground leading-[1.8] text-[0.9375rem] lg:pt-8">
+      <div className="text-center max-w-xl mx-auto mb-16">
+        <p className="text-accent text-xs font-semibold tracking-label uppercase mb-3">Services</p>
+        <h2 className="text-3xl md:text-[2.5rem] leading-tight font-display font-bold text-foreground mb-4">
+          Everything You Need to Close with Confidence
+        </h2>
+        <p className="text-muted-foreground leading-relaxed">
           Each service is designed to give you the clarity you need — whether you're closing a single residential deal or running due diligence on a portfolio.
         </p>
       </div>
 
-      <div className="grid sm:grid-cols-2 gap-px bg-border rounded-lg overflow-hidden">
+      <div className="grid sm:grid-cols-2 gap-5">
         {services.map((s, i) => (
-          <div key={s.title} className="bg-background p-7 md:p-10 group">
-            <div className="flex items-start gap-4 mb-4">
-              <span className="text-accent/20 font-display text-3xl leading-none mt-[-2px]">0{i + 1}</span>
-              <s.icon size={18} className="text-accent mt-1.5 shrink-0" strokeWidth={1.5} />
+          <div key={s.title} className="bg-card rounded-xl p-7 md:p-9 shadow-card hover:shadow-card-hover transition-shadow group">
+            <div className="w-11 h-11 rounded-lg bg-accent/10 flex items-center justify-center mb-5">
+              <s.icon size={20} className="text-accent" strokeWidth={1.8} />
             </div>
-            <h3 className="font-display text-lg text-foreground mb-3">{s.title}</h3>
+            <h3 className="font-display text-lg font-bold text-foreground mb-2.5">{s.title}</h3>
             <p className="text-muted-foreground text-sm leading-relaxed">{s.desc}</p>
           </div>
         ))}

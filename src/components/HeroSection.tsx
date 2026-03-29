@@ -1,63 +1,53 @@
-import heroBg from "@/assets/hero-bg.jpg";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Shield } from "lucide-react";
 
 const stats = [
-  { value: "500+", label: "Title Searches Completed" },
+  { value: "500+", label: "Searches Completed" },
   { value: "99.8%", label: "Accuracy Rate" },
-  { value: "24–48h", label: "Average Turnaround" },
+  { value: "24–48h", label: "Avg. Turnaround" },
 ];
 
 const HeroSection = () => (
-  <section className="relative min-h-screen flex flex-col bg-navy overflow-hidden">
-    <img src={heroBg} alt="" width={1920} height={1080} className="absolute inset-0 w-full h-full object-cover opacity-10" />
-    <div className="absolute inset-0 bg-gradient-to-b from-navy via-navy/95 to-navy" />
+  <section className="relative min-h-[92vh] flex items-center bg-navy overflow-hidden">
+    {/* Gradient orbs */}
+    <div className="absolute top-[-20%] right-[-10%] w-[600px] h-[600px] rounded-full bg-accent/10 blur-[120px]" />
+    <div className="absolute bottom-[-10%] left-[-5%] w-[400px] h-[400px] rounded-full bg-cyan/8 blur-[100px]" />
 
-    <div className="container relative z-10 flex-1 flex items-center pt-[72px]">
-      <div className="w-full py-16 md:py-24">
-        <div className="grid lg:grid-cols-[1fr_auto] gap-16 items-center">
-          <div>
-            <div className="w-10 h-[2px] bg-accent mb-8" />
-            <h1 className="text-[2.25rem] md:text-[2.75rem] lg:text-[3.25rem] leading-[1.12] text-primary-foreground mb-6 tracking-tight max-w-[600px]">
-              Your Deals Deserve a Clean Title. I Make Sure of It.
-            </h1>
-            <p className="text-primary-foreground/50 text-base md:text-[1.0625rem] leading-[1.7] mb-10 max-w-[480px]">
-              I deliver institutional-grade title search reports that protect your investments and keep your closings on schedule. No guesswork — just verified facts.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-3">
-              <a href="#contact" className="group inline-flex items-center justify-center gap-2 bg-accent text-accent-foreground px-7 py-3.5 rounded text-sm font-semibold tracking-wide hover:bg-accent/90 transition-colors">
-                Request a Free Sample Report
-                <ArrowRight size={15} className="group-hover:translate-x-0.5 transition-transform" />
-              </a>
-              <a href="#process" className="inline-flex items-center justify-center border border-primary-foreground/15 text-primary-foreground/70 px-7 py-3.5 rounded text-sm font-medium tracking-wide hover:border-primary-foreground/30 hover:text-primary-foreground transition-colors">
-                See How It Works
-              </a>
-            </div>
-          </div>
+    <div className="container relative z-10 pt-16">
+      <div className="max-w-2xl">
+        <div className="inline-flex items-center gap-2 bg-primary-foreground/5 border border-primary-foreground/10 rounded-full px-4 py-1.5 mb-8">
+          <Shield size={14} className="text-cyan" />
+          <span className="text-primary-foreground/60 text-xs font-medium">Trusted by Title Companies & Investors Nationwide</span>
+        </div>
 
-          {/* Right side - trust signal */}
-          <div className="hidden lg:block border-l border-primary-foreground/10 pl-12">
-            <p className="text-primary-foreground/30 text-xs font-semibold tracking-label uppercase mb-6">Trusted By</p>
-            <div className="space-y-5">
-              {["Title Companies", "Real Estate Investors", "Law Firms", "Mortgage Lenders"].map((c) => (
-                <p key={c} className="text-primary-foreground/50 text-sm">{c}</p>
-              ))}
-            </div>
-          </div>
+        <h1 className="text-[2.5rem] md:text-[3.25rem] lg:text-[3.75rem] leading-[1.08] font-display font-extrabold text-primary-foreground mb-6 tracking-tight">
+          Your Deals Deserve a{" "}
+          <span className="text-gradient">Clean Title.</span>
+          <br />I Make Sure of It.
+        </h1>
+
+        <p className="text-primary-foreground/50 text-base md:text-lg leading-relaxed mb-10 max-w-lg">
+          Institutional-grade title search reports that protect your investments and keep closings on schedule. No guesswork — verified facts, every time.
+        </p>
+
+        <div className="flex flex-col sm:flex-row gap-3">
+          <a href="#contact" className="group inline-flex items-center justify-center gap-2.5 bg-accent text-accent-foreground px-7 py-3.5 rounded-lg text-sm font-bold hover:bg-accent/90 transition-all hover:shadow-lg hover:shadow-accent/20">
+            Request a Free Sample Report
+            <ArrowRight size={16} className="group-hover:translate-x-0.5 transition-transform" />
+          </a>
+          <a href="#process" className="inline-flex items-center justify-center border border-primary-foreground/15 text-primary-foreground/70 px-7 py-3.5 rounded-lg text-sm font-medium hover:border-primary-foreground/30 hover:text-primary-foreground transition-colors">
+            See How It Works
+          </a>
         </div>
       </div>
-    </div>
 
-    {/* Stats bar */}
-    <div className="relative z-10 border-t border-primary-foreground/8">
-      <div className="container">
-        <div className="grid grid-cols-3 divide-x divide-primary-foreground/8">
-          {stats.map((s) => (
-            <div key={s.label} className="py-6 md:py-8 text-center">
-              <p className="text-accent font-display text-2xl md:text-3xl mb-1">{s.value}</p>
-              <p className="text-primary-foreground/35 text-[11px] md:text-xs tracking-wide uppercase">{s.label}</p>
-            </div>
-          ))}
-        </div>
+      {/* Stats */}
+      <div className="mt-20 md:mt-28 grid grid-cols-3 gap-6 md:gap-0 md:divide-x md:divide-primary-foreground/10 border-t border-primary-foreground/8 pt-8">
+        {stats.map((s) => (
+          <div key={s.label} className="md:px-8 first:pl-0">
+            <p className="text-cyan font-display text-2xl md:text-3xl font-bold">{s.value}</p>
+            <p className="text-primary-foreground/35 text-xs md:text-sm mt-1">{s.label}</p>
+          </div>
+        ))}
       </div>
     </div>
   </section>

@@ -8,23 +8,25 @@ const reasons = [
 ];
 
 const WhyMeSection = () => (
-  <section id="why-me" className="py-20 md:py-28 bg-navy">
-    <div className="container">
-      <div className="grid lg:grid-cols-[0.8fr_1fr] gap-12 lg:gap-20 items-start mb-14">
-        <div>
-          <p className="text-accent text-xs font-semibold tracking-label uppercase mb-4">Why Work With Me</p>
-          <h2 className="text-[1.75rem] md:text-[2.25rem] leading-[1.2] text-primary-foreground">
-            I Treat Every Search Like My Reputation Depends on It — Because It Does
-          </h2>
-        </div>
+  <section id="why-me" className="py-24 md:py-32 bg-navy relative overflow-hidden">
+    <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full bg-accent/5 blur-[100px]" />
+
+    <div className="container relative z-10">
+      <div className="text-center max-w-xl mx-auto mb-16">
+        <p className="text-cyan text-xs font-semibold tracking-label uppercase mb-3">Why Work With Me</p>
+        <h2 className="text-3xl md:text-[2.5rem] leading-tight font-display font-bold text-primary-foreground">
+          I Treat Every Search Like My Reputation Depends on It
+        </h2>
       </div>
 
-      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
-        {reasons.map((r, i) => (
-          <div key={r.title} className="relative pl-5 border-l border-primary-foreground/10">
-            <span className="text-accent/25 font-display text-2xl mb-3 block">0{i + 1}</span>
-            <h3 className="font-display text-[1.0625rem] text-primary-foreground mb-2">{r.title}</h3>
-            <p className="text-primary-foreground/40 text-sm leading-relaxed">{r.desc}</p>
+      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        {reasons.map((r) => (
+          <div key={r.title} className="bg-primary-foreground/5 border border-primary-foreground/8 rounded-xl p-6 hover:bg-primary-foreground/8 transition-colors">
+            <div className="w-10 h-10 rounded-lg bg-accent/15 flex items-center justify-center mb-4">
+              <r.icon size={18} className="text-cyan" strokeWidth={1.8} />
+            </div>
+            <h3 className="font-display text-base font-bold text-primary-foreground mb-2">{r.title}</h3>
+            <p className="text-primary-foreground/45 text-sm leading-relaxed">{r.desc}</p>
           </div>
         ))}
       </div>
